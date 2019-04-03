@@ -49,39 +49,49 @@ export const NavItem = styled.div`
 `;
 
 export const NavSearch = styled.div`
+  position: relative;
   float: left;
   margin-top: 9px;
   margin-left: 15px;
-  width: 240px;
-  height: 38px;
-  background-color: #eee; 
-  border: 1px solid transparent;
-  border-radius: 19px;  
-  box-sizing: border-box;
+
   &>input {
     padding: 0 20px;
-    width: calc(100% - 35px);
-    height: 100%;
-    background: transparent;
-    border: none;
+    width: 240px;
+    height: 38px;
+    background-color: #eee; 
+    border: 1px solid transparent;
+    border-radius: 19px;  
     box-sizing: border-box;
     font-size: 14px;  
     outline: none;
+    transition: width .5s;
     &::placeholder {
       color: #999;
     }
   }
+  &>input:focus {
+    width: 320px;
+  }
   &>.search-btn {
-    float: right;
-    margin-right: 5px;
-    height: 100%;
+    position: absolute;
+    top: 4px;
+    right: 5px;
     width: 30px;
+    height: 30px;
     background: transparent;
     border: none;
     color: #999;
     outline: none;
     &>.iconfont {
       font-size: 17px;  
+    }
+  }
+  &>input:focus+.search-btn {
+    background-color: #969696;
+    border-radius: 50%;
+    color: #fff!important;
+    &>.iconfont {
+
     }
   }
 `;
