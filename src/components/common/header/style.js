@@ -1,11 +1,12 @@
 import styled from 'styled-components';
-import logoPng from '../../../statics/nav-logo.png';
+import logoPng from '../../../resources/image/nav-logo.png';
 
 export const HeaderWrapper = styled.div`
   position: relative;
   height: 55px;
   border-bottom: 1px solid #f0f0f0;
   &>.width-limit {
+    position: relative;
     min-width: 768px;
     max-width: 1440px;
     margin: 0 auto;
@@ -42,9 +43,13 @@ export const NavItem = styled.div`
   margin-right: 10px;
   padding: 0 15px;
   color: #333;
+  cursor: pointer;
   font-size: 17px;
   &.active {
     color: #ea6f5a;
+  }
+  &:hover {
+    background-color: #f5f5f5;
   }
 `;
 
@@ -55,13 +60,14 @@ export const NavSearch = styled.div`
   margin-left: 15px;
 
   &>input {
-    padding: 0 20px;
+    padding: 0 40px 0 20px;
     width: 240px;
     height: 38px;
     background-color: #eee; 
     border: 1px solid transparent;
     border-radius: 19px;  
     box-sizing: border-box;
+    color: #666;
     font-size: 14px;  
     outline: none;
     transition: width .5s;
@@ -81,6 +87,7 @@ export const NavSearch = styled.div`
     background: transparent;
     border: none;
     color: #999;
+    cursor: pointer;
     outline: none;
     &>.iconfont {
       font-size: 17px;  
@@ -126,14 +133,25 @@ export const Button = styled.a`
     margin: 9px 5px 0 15px;
     width: 80px;
     color: #ea6f5a;
+    cursor: pointer;
+    &:hover {
+      color: #ec6149;
+      border-color: #ec6149;
+      background-color: rgba(236,97,73,.05);
+    }
   }
   &.writting {
     margin: 8px 15px 0;
     width: 100px;
     height: 40px;
     color: white;
+    cursor: pointer;
     background: #ea6f5a;
     border: 1px solid #ea6f5a;
+    &:hover {
+      color: #fff;
+      background-color: #ec6149;
+    }
     &>.iconfont {
       float: none;
       margin-right: 3px;

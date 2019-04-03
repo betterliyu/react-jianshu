@@ -1,15 +1,19 @@
 import React from 'react';
-import { ResetStyle } from './style';
-import { IconFont } from './statics/iconfont/iconfont';
-import Header from './component/common/header';
+import {
+  IconFont,
+  ResetStyle
+} from './style';
+import {
+  HeaderContainer
+} from './containers';
 
 
-const App = (props) => {
+const App = props => {
   return (
     <div className="app-container">
       <ResetStyle />
       <IconFont />
-      <Header />
+      <HeaderContainer />
     </div>
   );
 }
