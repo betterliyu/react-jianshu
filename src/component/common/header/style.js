@@ -3,8 +3,18 @@ import logoPng from '../../../statics/nav-logo.png';
 
 export const HeaderWrapper = styled.div`
   position: relative;
-  height: 58px;
+  height: 55px;
   border-bottom: 1px solid #f0f0f0;
+  &>.width-limit {
+    min-width: 768px;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+  & .iconfont {
+    float: left;
+    margin-right: 5px;
+    font-size: 20px;
+  }
 `;
 
 export const Logo = styled.a`
@@ -27,36 +37,52 @@ export const Nav = styled.div`
 `;
 
 export const NavItem = styled.div`
+  float: left;
   line-height: 56px;
+  margin-right: 10px;
   padding: 0 15px;
   color: #333;
   font-size: 17px;
-  &.left {
-    float: left;
-  }
-  &.right {
-    float: right;
-    color: #969696;
-  }
   &.active {
     color: #ea6f5a;
   }
 `;
 
-export const NavSearch = styled.input`
-  width: 160px;
-  height: 38px;
+export const NavSearch = styled.div`
+  float: left;
   margin-top: 9px;
-  margin-left: 20px;
-  padding: 0 20px;
+  margin-left: 15px;
+  width: 240px;
+  height: 38px;
+  background-color: #eee; 
+  border: 1px solid transparent;
+  border-radius: 19px;  
   box-sizing: border-box;
-  border: none;
-  outline: none;
-  border-radius: 19px;
-  background-color: #eee;
-  font-size: 14px;
-  &::placeholder {
+  &>input {
+    padding: 0 20px;
+    width: calc(100% - 35px);
+    height: 100%;
+    background: transparent;
+    border: none;
+    box-sizing: border-box;
+    font-size: 14px;  
+    outline: none;
+    &::placeholder {
+      color: #999;
+    }
+  }
+  &>.search-btn {
+    float: right;
+    margin-right: 5px;
+    height: 100%;
+    width: 30px;
+    background: transparent;
+    border: none;
     color: #999;
+    outline: none;
+    &>.iconfont {
+      font-size: 17px;  
+    }
   }
 `;
 
@@ -67,20 +93,54 @@ export const Addition = styled.div`
   height: 56px;
 `;
 
-export const Button = styled.button`
+export const Button = styled.a`
   float: right;
-  margin-top: 9px;
-  margin-right: 20px;
-  padding: 0 20px;
-  line-height: 38px;
-  border: 1px solid #ec6149;
-  border-radius: 19px;
+  padding: 6px 12px;
+  height: 38px;
+  line-height: 24px;
+  border: 1px solid #ea6f5a;
+  border-radius: 20px;
+  box-sizing: border-box;
   background: white;
+  font-size: 15px;
+  text-align: center;
+  &.login {
+    float: right;
+    margin: 10px 6px 0 10px;
+    color: #969696;
+    border: 1px solid transparent;
+    font-size: 15px;
+    font-weight: 400;
+  }
   &.reg {
-    color: #ec6149;
+    margin: 9px 5px 0 15px;
+    width: 80px;
+    color: #ea6f5a;
   }
   &.writting {
+    margin: 8px 15px 0;
+    width: 100px;
+    height: 40px;
     color: white;
-    background: #ec6149;
+    background: #ea6f5a;
+    border: 1px solid #ea6f5a;
+    &>.iconfont {
+      float: none;
+      margin-right: 3px;
+      vertical-align: middle;
+      font-size: 19px;
+    }
+  }
+`;
+
+export const StyleMode = styled.a`
+  float: right;
+  padding: 17px 10px 17px 15px;
+  color: #969696;
+  font-size: 17px;
+  &>.iconfont {
+    margin-right: 0;
+    line-height: 20px;
+    font-size: 24px;
   }
 `;

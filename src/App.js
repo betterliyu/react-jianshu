@@ -1,12 +1,14 @@
 import React from 'react';
-import { GlobalStyle } from './style';
+import { ResetStyle } from './style';
+import { IconFont } from './statics/iconfont/iconfont';
 import Header from './component/common/header';
 
 
 const App = (props) => {
   return (
     <div className="app-container">
-      <GlobalStyle />
+      <ResetStyle />
+      <IconFont />
       <Header />
     </div>
   );
