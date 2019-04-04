@@ -2,7 +2,7 @@ import React from 'react';
 import {
   IconFont,
   ResetStyle
-} from './style';
+} from './styles';
 import {
   HeaderContainer
 } from './containers';
@@ -10,11 +10,11 @@ import {
 
 const App = props => {
   return (
-    <div className="app-container">
+    <React.Fragment>
       <ResetStyle />
       <IconFont />
       <HeaderContainer />
-    </div>
+    </React.Fragment>
   );
 }
 

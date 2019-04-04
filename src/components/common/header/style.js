@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import logoPng from '../../../resources/image/nav-logo.png';
 
-export const HeaderWrapper = styled.div`
+export const HeaderWrapper = styled.header`
   position: relative;
   height: 55px;
   border-bottom: 1px solid #f0f0f0;
@@ -11,7 +11,7 @@ export const HeaderWrapper = styled.div`
     max-width: 1440px;
     margin: 0 auto;
   }
-  & .iconfont {
+  & .nav-item>.iconfont {
     float: left;
     margin-right: 5px;
     font-size: 20px;
@@ -102,6 +102,91 @@ export const NavSearch = styled.div`
     }
   }
 `;
+
+export const SearchTrendWrapper = styled.div`
+  position: absolute;
+  top: 47px;
+  left: 0;
+  padding: 20px 20px 10px;
+  width: 250px;
+  min-height: 100px;
+  background: white;
+  border-radius: 4px;
+  box-sizing: border-box;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  &>.header {
+    margin-bottom: 10px;
+    color: #969696;
+    line-height: 20px;
+    font-size: 14px;
+    &>.title {
+      float: left;
+    }
+    &>.switch {
+      float: right;
+      cursor: pointer;
+      font-size: 13px;
+      &:hover {
+        color: #2f2f2f;
+      }
+      &>i {
+        display: inline-block;
+        margin-right: 4px;
+        line-height: 1;
+        font-size: 13px;
+      }
+    }
+    &::after {
+      content: " ";
+      display: block;
+      clear: both;
+    }
+  }
+  &>.list {
+    display: inline-block;
+    color: #767676;
+    font-size: 12px;
+    &>li {
+      display: inline-block;
+      margin-right: 10px;
+      line-height: 28px;
+      &>a {
+        padding: 2px 6px;
+        font-size: 12px;
+        color: #787878;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        cursor: pointer;
+        &:hover {
+          color: #333;
+          border-color: #b4b4b4;
+        }
+      }
+    }
+
+  }
+  &::before {
+    content: " ";
+    position: absolute;
+    top: -22px;
+    display: inline-block;
+    border: 12px solid white;
+    border-color: transparent transparent #fff;
+  }
+  &::after {
+    content: " ";
+    position: absolute;
+    left: 27px;
+    top: -5px;
+    z-index: -1;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    box-shadow: 0 0 8px rgba(0,0,0,.2);
+    transform: rotate(45deg);
+  }
+`;
+
 
 export const Addition = styled.div`
   position: absolute;
