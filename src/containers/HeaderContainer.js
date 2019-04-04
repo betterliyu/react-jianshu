@@ -9,6 +9,7 @@ import {
 const HeaderContainer = props => <Header {...props} />;
 
 const mapStateToProps = state => {
+
   return {
     trend: state.getIn(['header', 'trend']),
     trendPageNo: state.getIn(['header', 'trendPageNo']),
@@ -16,12 +17,7 @@ const mapStateToProps = state => {
   };
 }
 
-const mapDispatchToProps = {
+export default connect(mapStateToProps, {
   fetchTrendIfNeeded,
   switchTrendPage
-};
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(HeaderContainer);
+})(HeaderContainer);

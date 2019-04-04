@@ -97,9 +97,9 @@ export const NavSearch = styled.div`
     background-color: #969696;
     border-radius: 50%;
     color: #fff!important;
-    &>.iconfont {
-
-    }
+  }
+  &>input:focus~.search-trend {
+    display: block;
   }
 `;
 
@@ -107,6 +107,7 @@ export const SearchTrendWrapper = styled.div`
   position: absolute;
   top: 47px;
   left: 0;
+  display: none;
   padding: 20px 20px 10px;
   width: 250px;
   min-height: 100px;
@@ -114,6 +115,9 @@ export const SearchTrendWrapper = styled.div`
   border-radius: 4px;
   box-sizing: border-box;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  &:hover {
+    display: block;
+  }
   &>.header {
     margin-bottom: 10px;
     color: #969696;
@@ -134,6 +138,7 @@ export const SearchTrendWrapper = styled.div`
         margin-right: 4px;
         line-height: 1;
         font-size: 13px;
+        transition: .5s ease;
       }
     }
     &::after {

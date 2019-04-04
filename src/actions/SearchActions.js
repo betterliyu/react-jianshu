@@ -27,7 +27,15 @@ export const fetchTrendIfNeeded = () => (dispatch, getState) => {
   }
 };
 
-export const switchTrendPage = pageNo => ({
-  type: HeaderActionTypes.SWITCH_TREND_PAGE,
+const changeTrendPage = pageNo => ({
+  type: HeaderActionTypes.CHANGE_TREND_PAGE,
   pageNo
 });
+
+export const switchTrendPage = () => (dispatch, getState) => {
+  const state = getState();
+  let currentPageNo = state.getIn(['header', 'trendPageNo']);
+  const totalPage = state.getIn(['header', 'trendTotalPage']);
+  let pageNo = ++currentPageNo > totalPage ? 1 : currentPageNo;
+  dispatch(changeTrendPage(pageNo));
+}

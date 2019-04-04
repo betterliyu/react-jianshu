@@ -10,8 +10,11 @@ const defaultState = fromJS({
 export default (state = defaultState, action) => {
   switch (action.type) {
     case HeaderActionTypes.FETCH_SEARCH_TREND_SUCCESS:
-      return state.set('trend', action.trend).set('trendTotalPage', action.totalPage);
-    case HeaderActionTypes.SWITCH_TREND_PAGE:
+      return state.merge({
+        trend: action.trend,
+        trendTotalPage: action.totalPage
+      });
+    case HeaderActionTypes.CHANGE_TREND_PAGE:
       return state.set('trendPageNo', action.pageNo);
     default:
       break;

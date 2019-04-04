@@ -24,7 +24,6 @@ const propTypes = {
 class Header extends Component {
   constructor(props) {
     super(props);
-
     this.onSearchBoxFocus = this.onSearchBoxFocus.bind(this);
   }
 
@@ -35,7 +34,7 @@ class Header extends Component {
 
   render() {
     const {
-      trend, trendPageNo, trendTotalPage, switchTrendPage,
+      trend, trendPageNo, trendTotalPage, switchTrendPage
     } = this.props;
     return (
       <HeaderWrapper>
